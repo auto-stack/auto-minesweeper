@@ -1,0 +1,69 @@
+{
+  "repository": "auto-minesweeper",
+  "date": "2026-10-03",
+  "sources": [
+    {
+      "repo": "auto-os",
+      "commit": "93c3cb0259c8cfe1644e2b35baff71638be59ec5",
+      "path": "apps/038-minesweeper",
+      "primary": true,
+      "fileCount": 8,
+      "pacFields": {
+        "name": "minesweeper",
+        "version": "1.0.0",
+        "scene": "ui",
+        "render": "vue",
+        "icon": "bomb",
+        "title": "Minesweeper",
+        "title_zh": "扫雷",
+        "front_port": "4038",
+        "window": "fit",
+        "desktop": "true",
+        "desktop_exe": "rust-workspace/target/debug/minesweeper.exe"
+      },
+      "files": [
+        {
+          "sourcePath": "apps/038-minesweeper/.gitignore",
+          "path": ".gitignore",
+          "sha256": "66aa97b44e8ee16828303278d4b3eb8f1623ff6941595ef4fd3c7402009f8753"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/README.md",
+          "path": "README.md",
+          "sha256": "a77ca5daec5f84eacf4e4753200da61ce3c457e8dc98e2481b7b5e8b12e90418"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/pac.at",
+          "path": "pac.at",
+          "sha256": "540654fdeb479a49a649abf0f02beb3a075b0bde3466f5d3cd4b62a1ec32077a"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/src/front/app.at",
+          "path": "src/front/app.at",
+          "sha256": "e78a682e6a8f1233b397e4889f485f611794b55fccdd740e71aaaceda286fb6e"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/src/front/minesweeper_store.at",
+          "path": "src/front/minesweeper_store.at",
+          "sha256": "12b3fa7a2dcb344520a2a92da47abd112ba2cef9891771690a9116f648314daa"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/src/front/tests/screenshots/mines_vm_fit_initial.png",
+          "path": "src/front/tests/screenshots/mines_vm_fit_initial.png",
+          "sha256": "f0eb38a4d612a15b7f3ba9e8b30b025695ae17b419e65e6c3d97d84b9a545df4"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/tests/desktop_mcp.py",
+          "path": "tests/desktop_mcp.py",
+          "sha256": "677bf883df987475a0422f6f4ea9f7e70ef58d1ae829d549b79438cd38806907"
+        },
+        {
+          "sourcePath": "apps/038-minesweeper/tests/rust_smoke.py",
+          "path": "tests/rust_smoke.py",
+          "sha256": "78d60d5b315df2e7a177b2923aa6adee14904e108774936b9e3c6e021c553dc3"
+        }
+      ]
+    }
+  ],
+  "note": "Exact committed source snapshots; packaging changes follow in a separate commit. References are not additional installed apps."
+}

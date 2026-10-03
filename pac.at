@@ -1,0 +1,14 @@
+name: "minesweeper"
+version: "1.0.0"
+scene: "ui"
+render: "vue"
+icon: "bomb"
+title: "Minesweeper"
+title_zh: "扫雷"
+front_port: 4038
+# Plan 506: 窗口随内容自然尺寸收缩（独立 VM 窗 / 虚拟桌面窗双路径）。
+window: "fit"
+desktop: "true"
+# PLAN-039 T-05：a2r 编译 exe 声明（`auto build -r rust` 产物，相对 App
+# 根——生成门绿 2026-09-21；debug 档为开发环，release 升档随收口批）。
+desktop_exe: "rust-workspace/target/debug/minesweeper.exe"
