@@ -5,7 +5,7 @@ render: "vue"
 icon: "bomb"
 title: "Minesweeper"
 title_zh: "扫雷"
-front_port: 4038
+front_port: 17848
 # Plan 506: 窗口随内容自然尺寸收缩（独立 VM 窗 / 虚拟桌面窗双路径）。
 window: "fit"
 desktop: "true"
