@@ -1,4 +1,8 @@
 use minesweeper_store: MinesweeperStore
+// auto-os/PLAN-060 T-03：官方主题包主题名导入（031 合同消费面——`dep themes`
+// 声明使包可解析，本 use 把包内 pub 主题收进收集链；无此行 themes 树不注册，
+// design.theme/follow 宿主候选都会在 C-11 未注册拒绝）。
+use themes.themes: Auto
 
 widget App {
     msg {
@@ -13,6 +17,21 @@ widget App {
     model {
         var interval int = 1000
         var mounted int = 0
+        // PLAN-060 T-03：dark_mode 状态位（Plan 458 契约变量名，勿改）——
+        // design mode 派生源；种子链在启动/翻转时回写。默认 true = 原 zinc
+        // 暗壳观感在显式暗轨（AUTO_UI_THEME=dark）保持。
+        var dark_mode bool = true
+    }
+
+    // PLAN-060 T-03：主题设计默认（独立默认腿）。theme="Auto" 经 pac
+    // `dep themes`（vendor/themes 固定快照）注册的官方树解析；mode 由
+    // dark_mode 位驱动。宿主策略完整快照按 031 full-host 语义接管本默认
+    // （follow——pac 无 theme 键原语义）。内容身份豁免不映射：雷盘数字
+    // 1-8 色阶（规则身份，双路 string 前计算）、💣/🚩/🙂 语义、LCD 仪表
+    // 暗底（仪表身份）；公共壳（格子/面板/按钮/根卡）映射 token。
+    design {
+        theme: "Auto"
+        mode: if .dark_mode { "dark" } else { "light" }
     }
 
     // Plan 506 & Plan 017: 外壳"内容即页面"，配合 pac `window: "fit"` 窗口随内容收缩。
@@ -32,7 +51,7 @@ widget App {
                 // 表情重开按钮
                 button .store.face_icon {
                     onclick: .Reset,
-                    style: "text-2xl px-3.5 py-1 bg-zinc-800 hover:bg-zinc-700 active:scale-95 rounded-xl border border-zinc-700 shadow-md"
+                    style: "text-2xl px-3.5 py-1 bg-secondary hover:bg-secondary/80 active:scale-95 rounded-xl border border-border shadow-md"
                 }
 
                 // 计时器 LCD 盒
@@ -59,7 +78,7 @@ widget App {
                     onclick: .SetDifficulty("expert"),
                     class: .store.expert_class
                 }
-                style: "bg-zinc-900 border border-zinc-800 p-1 rounded-xl gap-1 items-center"
+                style: "bg-secondary/60 border border-border p-1 rounded-xl gap-1 items-center"
             }
 
             // —— 棋盘网格 ——
@@ -78,7 +97,7 @@ widget App {
                     cols: .store.cols
                     gap: 0
                 }
-                style: "p-1.5 bg-zinc-950/80 border border-zinc-800 rounded-xl shadow-2xl items-center"
+                style: "p-1.5 bg-background/60 border border-border rounded-xl shadow-2xl items-center"
             }
 
             // —— 游戏状态提示 ——
@@ -93,7 +112,7 @@ widget App {
                 }
             }
 
-            style: "max-w-fit p-4 items-center gap-3.5 bg-zinc-900/40 rounded-2xl border border-zinc-800/60"
+            style: "max-w-fit p-4 items-center gap-3.5 bg-card rounded-2xl border border-border"
         }
     }
 

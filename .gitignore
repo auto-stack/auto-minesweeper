@@ -21,3 +21,5 @@ __pycache__/
 /tmp/
 /test-results/
 /playwright-report/
+/deps/
+/src/front/tmp/

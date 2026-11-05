@@ -11,4 +11,16 @@ window: "fit"
 desktop: "true"
 # PLAN-039 T-05：a2r 编译 exe 声明（`auto build -r rust` 产物，相对 App
 # 根——生成门绿 2026-09-21；debug 档为开发环，release 升档随收口批）。
+# auto-os/PLAN-060 T-03：官方主题包正式接入。本产品历来无 `theme:` 键
+# （= follow 宿主语义原样保留：宿主策略完整快照 > 本 design 默认 > legacy
+# 回退）。原 zinc 暗壳改由 app.at design 派生腿承接（458/615 种子链）。
+# `vendor/themes` 为 UI 管理渠道发布的**固定版本快照**（themes 0.2.0，内容
+# digest 9fa07742dc68aa5377ae06cb2d966386002063f184c515b6c5dddf8a6bef838e，
+# per-file sha256 与源包逐文件校验同律；不可二次编辑、非第二权威源）。
+# 主合同反链见 README。
+
+dep themes {
+    path: "vendor/themes"
+}
+
 desktop_exe: "rust-workspace/target/debug/minesweeper.exe"
